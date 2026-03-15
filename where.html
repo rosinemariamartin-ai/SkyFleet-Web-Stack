@@ -1,0 +1,118 @@
+<html>
+<head>
+  <title>SkyFleet - Where We Fly</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #003366;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    select, button {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-left: 1rem;
+    }
+
+    button:hover {
+      background-color: #005f8a;
+    }
+
+    .output {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #f0f0f0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>SkyFleet Global Destinations</h1>
+  <div class="container">
+    <img src="C:\Users\Rose\OneDrive\Desktop\map.png" />
+
+    <label for="region-select">Select a Region or City:</label>
+    <select id="region-select">
+      <option value="">--Choose--</option>
+      <option value="asia">Asia & Pacific</option>
+      <option value="america">America</option>
+      <option value="europe">Europe</option>
+      <option value="middleeast">Middle East</option>
+      <option value="sanfrancisco">San Francisco</option>
+      <option value="london">London Dass</option>
+      <option value="paris">Paris</option>
+    </select>
+    <button onclick="showDestinations()">Show Destinations</button>
+
+    <div id="output" class="output"></div>
+  </div>
+
+  <script>
+    function showDestinations() {
+      const region = document.getElementById('region-select').value;
+      const output = document.getElementById('output');
+      let message = "";
+
+      switch(region) {
+        case "asia":
+          message = "We fly to major destinations across Asia & Pacific including Tokyo, Singapore, Sydney, Bangkok, and Delhi.";
+          break;
+        case "america":
+          message = "Our routes cover North and South America including New York, Los Angeles, Toronto, São Paulo, and Mexico City.";
+          break;
+        case "europe":
+          message = "Explore Europe with flights to London, Paris, Rome, Berlin, Amsterdam, and Zurich.";
+          break;
+        case "middleeast":
+          message = "We connect to the Middle East via Dubai, Doha, Abu Dhabi, Riyadh, and Muscat.";
+          break;
+        case "sanfrancisco":
+          message = "San Francisco is a key hub with daily flights to Asia, Europe, and domestic cities.";
+          break;
+        case "london":
+          message = "London Dass offers premium connections to Europe, America, and the Middle East.";
+          break;
+        case "paris":
+          message = "Paris is a cultural gateway with direct flights to Asia, Africa, and North America.";
+          break;
+        default:
+          message = "Please select a region or city to view destinations.";
+      }
+
+      output.innerText = message;
+    }
+  </script>
+</body>
+</html>
